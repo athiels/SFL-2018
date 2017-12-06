@@ -686,3 +686,13 @@ video#bgvid {
 }
 
 
+.titleFont {
+	font-size:35px;
+}
+
+@media (max-width: 480px) {
+	.titleFont {
+		font-size:25px;
+	}
+}
+
