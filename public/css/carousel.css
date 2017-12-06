@@ -1,0 +1,96 @@
+.jssora21l, .jssora21r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background: url(../images/a16.png) center center no-repeat;
+	overflow: hidden;
+}
+.jssora21l {
+	background-position: -3px -33px;
+}
+.jssora21r {
+	background-position: -63px -33px;
+}
+.jssora21l:hover {
+	background-position: -123px -33px;
+}
+.jssora21r:hover {
+	background-position: -183px -33px;
+}
+.jssora21l.jssora21ldn {
+	background-position: -243px -33px;
+}
+.jssora21r.jssora21rdn {
+	background-position: -303px -33px;
+}
+
+.slider-container {
+	position: relative;
+	margin: 0 auto;
+	top: 25px;
+	left: 0px;
+	width: 1500px;
+	height: 700px;
+	overflow: hidden;
+	background-color: black;
+}
+
+.slides {
+	cursor: move;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1500px;
+	height: 700px;
+	overflow: hidden;
+}
+
+.viewer-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	position: fixed;
+}
+
+.hide-viewer {
+	visibility: hidden;
+}
+
+.show-viewer {
+	visibility: visible;
+}
+
+.slides img {
+	height: 100%;
+	width: auto;
+	border-radius: 5px;
+}
+
+.close-viewer {
+	margin: 25px;
+	text-shadow: 1px 1px 2px #000;
+	position: absolute;
+	top: 15px;
+	left: 50px;
+	z-index: 150;
+}
+
+.full-screen {
+	margin: 25px;
+	text-shadow: 1px 1px 2px #000;
+	position: absolute;
+	top: 15px;
+	left: 1300px;
+	z-index: 150;
+}
+
+a:hover {
+	cursor: pointer !important;
+	cursor: hand !important;
+}
