@@ -103,19 +103,16 @@
 				}
             }
 		}
-		
-    </script>
-	
-	<script>			
+
 	$( document ).ready(function() {
-		var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-		if (!iOS) {
+		var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		if (mobile == 0) {
 			var video=document.getElementById("bgvid");
 			video.muted = false;
 		}		
 	});
 		
-	</script>
-	
+		
+    </script>
 </body>
 </html>
