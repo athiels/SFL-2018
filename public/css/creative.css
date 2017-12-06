@@ -602,14 +602,17 @@ label {
 }
 
 #wrapper {
-	position: absolute;
-	bottom: 150px;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	transform: translateX(-50%);
+	margin: 70vh auto;
 	width: 300px;
 }
+
+@media (max-width: 480px) {
+	#wrapper {
+		margin: 50vh auto;
+		width: 300px;
+	}
+}
+
 
 #wrapper input {
     height: 40px;
@@ -628,7 +631,6 @@ label {
 
 #wrapper button {
     height: 40px;
-    width: 100px;
     font-family: font;
     font-size: 30px;
     appearance: none;
@@ -694,5 +696,9 @@ video#bgvid {
 	.titleFont {
 		font-size:25px;
 	}
+}
+
+#loginScreen {
+	position: relative;
 }
 
