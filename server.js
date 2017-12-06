@@ -24,7 +24,7 @@ var s3 = new AWS.S3();
 var uploadsBucket = 'sfl-uploads';
 var videosBucket = 'sfl-videos';
 
-users = ["cekz","fwezi","ijunui", "Arne"]
+users = ["Test", "maEcT1K", "tclni1a", "skpxyMA", "jpCaQvM", "fhwieqs", "dgBhp6E", "bks8pSc", "evMHhsB", "nnIG40U", "rmu1B5R", "miGGz5Z", "wmU3aK4", "mr2UbIW", "evlrVpiq", "ng5DNlm", "rbNaXgh", "we1QwIq", "mcGffbd", "mkDMoY6", "jiT3d7Z", "gmuK3de", "ykndHAM", "llkI9TK", "xl51leo", "scl1sNu", "njeHbbR", "jvgB4IMW", "mvl4kCt1", "mcqIJ6x", "a6lDeX0", "svdUBYe", "pn5peUO", "V5sbFkv", "VlbcT3U", "Pt4z8wt", "740XAHu", "gzlwvCB", "bs1VGUa", "eyyYUt8"]
 
 app.get('/users', function (req, res) {
     res.json(users);
