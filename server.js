@@ -162,6 +162,25 @@ app.post('/rejectvideo', function (req, res) {
 	});
 });
 
+app.post('/login', function (req, res) {
+	var user = req.headers['user'];
+	var fs = require('fs');
+	var dt = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+	fs.appendFile('log.txt', dt + "     |      " + user + "\r\n", function (err) {
+	  if (err) throw err;
+	});
+	res.status(200).end();
+});
+
+app.get('/getlog', function (req, res) {
+	var file = [];
+	var fs = require('fs');
+	fs.readFile("log.txt", "utf8", function(err, data){
+		if(err) throw err;
+		 res.send(data);
+	});	
+});
+
 app.listen(port);
 console.log('Magic happens at http://localhost:' + port);
 

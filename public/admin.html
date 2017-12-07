@@ -45,7 +45,6 @@
 				
 		
 	$.get( "/getuploads", function( data ) {
-		console.log(data);
 		
 		if (data.length > 0) {
 			for (var i=0; i<data.length; i++) {
@@ -138,6 +137,11 @@
 		xhr.onload = function () {};
 		xhr.send();
 	};
+	
+	$.get( "/getlog", function( data ) {
+		console.log(data);
+	});
+	
 	
     </script>
 </body>

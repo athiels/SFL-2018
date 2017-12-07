@@ -375,9 +375,17 @@
 		   }
 		   return(false);
 		}
-			
-   
-	
+		
+		function sendLogin() {
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/login");
+			xhr.setRequestHeader("user", login);
+			xhr.onreadystatechange = function () {};
+			xhr.onload = function () {};
+			xhr.send();
+		}
+		sendLogin();
+
     </script>
 </body>
 
