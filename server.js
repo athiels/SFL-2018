@@ -192,7 +192,7 @@ app.get('/getlog', function (req, res) {
 					temp[0] = temp[0].trim();
 					temp[1] = temp[1].trim();
 					temp.push(getName(temp[1].trim()));
-				}
+				} catch (err) { console.log("Error parsing trim" + err); }
 				logs.push(temp);
 			}	
 		}
