@@ -188,9 +188,11 @@ app.get('/getlog', function (req, res) {
 			
 			for (i=0; i < arr.length; i++) {
 				var temp = arr[i].toString().split("|");
-				temp[0] = temp[0].trim();
-				temp[1] = temp[1].trim();
-				temp.push(getName(temp[1].trim()));
+				try {
+					temp[0] = temp[0].trim();
+					temp[1] = temp[1].trim();
+					temp.push(getName(temp[1].trim()));
+				}
 				logs.push(temp);
 			}	
 		}
