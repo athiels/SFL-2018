@@ -29,6 +29,7 @@
 
 <body id="page-top" class="bg-dark" style="padding: 50px;" >
 	<h1>Admin</h1>
+	<h3><a href="log.html" >Bekijk log</a></h3>
 	<h2 id="nnv_msg" style="display: none; margin: 50px;" >No new videos. </h2>
     
     <!-- jQuery -->
@@ -66,7 +67,7 @@
 				info.setAttribute('class', 'videoInfo floatLeft');
 				
 				var text = document.createElement('h3');
-				text.innerHTML = data[i][0];
+				text.innerHTML = "Filmpje van "+data[i][2];
 				
 				info.appendChild(text);
 				
@@ -137,11 +138,6 @@
 		xhr.onload = function () {};
 		xhr.send();
 	};
-	
-	$.get( "/getlog", function( data ) {
-		console.log(data);
-	});
-	
 	
     </script>
 </body>

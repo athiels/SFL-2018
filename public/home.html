@@ -170,7 +170,7 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2 class="section-heading" style="font-size:40px;">Alle reeds geuploade video's</h2>
                     <hr class="light">
-					<div id="listVideos"></div>
+					<div id="listVideos" style="text-align: center;" ></div>
 				</div>
 			</div>	
         </div>
@@ -265,7 +265,7 @@
 			$.get( "/getvideos", function( data ) {		
 							
 				for (i=0; i<data.length; i++ ){
-					if (data[i].indexOf(login) > -1) { alreadyUploadedAndConfirmed = true;	}
+					if (data[i][1].indexOf(login) > -1) { alreadyUploadedAndConfirmed = true;	}
 				}
 				
 				if (login) {
@@ -280,10 +280,19 @@
 							video.height = 240;
 							
 							var source = document.createElement('source');
-							source.src = data[i];
+							source.src = data[i][1];
 							
-							video.appendChild(source);						
-							listVideos.appendChild(video);
+							video.appendChild(source);	
+
+							var text = document.createElement('h3');
+							text.innerHTML = "Filmpje van "+data[i][2];
+							
+							var div = document.createElement('div');
+							div.style.cssText = 'margin: auto 1.5em; display: inline-block;';
+							div.appendChild(video);
+							div.appendChild(text);
+							
+							listVideos.appendChild(div);
 						}						
 					
 						$(confirmation).hide();
