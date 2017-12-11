@@ -129,25 +129,27 @@ app.post('/acceptvideo', function (req, res) {
 				}
 				else {
 					console.log(fname + " goedgekeurd");
-					setAclPublic(videosBucket, fname);
-					res.status(200).end();
+					var params = {
+						Bucket: videosBucket, 
+						Key: fname,
+						ACL: "public-read"
+					};
+					s3.putObjectAcl(params, function(err, data) {
+						if (err) { 
+							console.log(err, err.stack); 
+							res.status(500).end();
+						}
+						else {
+						   console.log(fname +" made public.");
+						   res.status(200).end();
+						}
+					});
+					
 				}
 			});
 		}
 	});
 });
-
-function setAclPublic(bucket, key) {
-	var params = {
-		Bucket: bucket, 
-		Key: key,
-		ACL: "public-read"
-	};
-	s3.putObjectAcl(params, function(err, data) {
-	   if (err) console.log(err, err.stack);
-	   else     console.log(fname +" made public.");
-	});
-}
 
 app.post('/rejectvideo', function (req, res) {
 	var fname = req.headers['fname'];
